@@ -3,31 +3,31 @@ package steps;
 import org.junit.Assert;
 
 import cucumber.api.java.en.*;
-import pages.ChubbPage;
+import pages.LoginChubbPage;
 
 
 public class LoginSteps {
 
-    ChubbPage chubb = new ChubbPage();
+    LoginChubbPage loginchubb = new LoginChubbPage();
 
     @Given ("^The user access the Chubb sales portal$")
     public void navigateToChubb(){
-        chubb.navigateToChubb(); 
+        loginchubb.navigateToChubb(); 
     }
 
     @When ("^the user enter a valid username and password$")
     public void enterUsernamePassword(){
-        chubb.enterUsername("antonio.montilla@logicstudio.net");
-        chubb.enterPassword("Tonito92197.");
+        loginchubb.enterUsername("antonio.montilla@logicstudio.net");
+        loginchubb.enterPassword("Tonito92197.");
     }
 
     @And ("^click on Iniciar session button$")
     public void clickIniciarSesion(){
-        chubb.clickChubbLogin();
+        loginchubb.clickChubbLogin();
     }
 
     @Then ("^the user can see the Chubb sales menu$")
     public void openSalesMenu(){
-        Assert.assertEquals("Texto que", chubb.firstResult());
+        Assert.assertEquals("Texto que", loginchubb.firstResult());
     }
 }

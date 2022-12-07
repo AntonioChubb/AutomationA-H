@@ -1,13 +1,13 @@
 package pages;
 
-public class ChubbPage extends BasePage {
+public class LoginChubbPage extends BasePage {
 
     private String usernameField = "//input[@id='signInName']";
     private String passwordField = "//input[@id='password']";
     private String login = "//button[@id='next']";
     private String firstresult = "";
 
-    public ChubbPage (){
+    public LoginChubbPage (){
         super(driver);
     }
 

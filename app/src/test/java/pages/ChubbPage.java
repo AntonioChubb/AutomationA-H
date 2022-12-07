@@ -1,11 +1,11 @@
 package pages;
 
-public class WeblinkPage extends BasePage{
+public class ChubbPage extends BasePage{
 
     private String weblinklink = "";
     private String weblinkpage = "";
 
-    public WeblinkPage(){
+    public ChubbPage(){
         super(driver);
     }
 

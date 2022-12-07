@@ -1,13 +1,23 @@
 package steps;
 
-import pages.WeblinkPage;
+import org.junit.Assert;
 
-public class OpenSalesPageStep {
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import pages.ChubbPage;
 
-    WeblinkPage weblink = new WeblinkPage();
+public class OpenWeblinkPageStep {
+
+    ChubbPage chubbpage = new ChubbPage();
     
     @When ("^the user click on Weblink link$")
-    public void 
-    @Then ("^the user can see the Weblink pages$")
+    public void clickWeblinkLink(){
+        chubbpage.clickWeblinkLink();
+    }
 
+
+    @Then ("^the user can see the Weblink pages$")
+    public void openWeblinkPage(){
+        Assert.assertEquals("Texto esperado", chubbpage.weblinkResult());
+    }
 }

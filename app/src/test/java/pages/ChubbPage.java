@@ -5,6 +5,7 @@ public class ChubbPage extends BasePage {
     private String usernameField = "//input[@id='signInName']";
     private String passwordField = "//input[@id='password']";
     private String login = "//button[@id='next']";
+    private String firstresult = "";
 
     public ChubbPage (){
         super(driver);
@@ -25,5 +26,9 @@ public class ChubbPage extends BasePage {
 
     public void enterPassword(String password){
         write(passwordField, password);
+    }
+
+    public String firstResult(){
+        return textFromElement(firstresult);
     }
 }

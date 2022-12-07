@@ -1,3 +1,4 @@
+@test
 Feature: Test Inicio de Sesion
 
 Scenario: Login in sales portal Chubb

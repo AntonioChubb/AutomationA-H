@@ -5,7 +5,7 @@ public class LoginChubbPage extends BasePage {
     private String usernameField = "//input[@id='signInName']";
     private String passwordField = "//input[@id='password']";
     private String login = "//button[@id='next']";
-    private String firstresult = "";
+    private String result = "//a[@title='Weblink']";
 
     public LoginChubbPage (){
         super(driver);
@@ -28,7 +28,7 @@ public class LoginChubbPage extends BasePage {
         write(passwordField, password);
     }
 
-    public String firstResult(){
-        return textFromElement(firstresult);
+    public boolean firstResult(){
+        return elementIsDisplayed(result);
     }
 }

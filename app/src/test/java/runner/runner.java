@@ -12,7 +12,7 @@ import pages.BasePage;
     features = "src/test/resources/features",
     glue = "steps",
     monochrome = true,
-    tags = "@test"
+    tags = "@testlogin"
 
 )
 

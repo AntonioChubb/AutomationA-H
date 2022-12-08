@@ -28,6 +28,6 @@ public class LoginSteps {
 
     @Then ("^the user can see the Chubb sales menu$")
     public void openSalesMenu(){
-        Assert.assertEquals("Texto que", loginchubb.firstResult());
+        Assert.assertTrue("No se muestra el enlace Weblink", loginchubb.firstResult());
     }
 }

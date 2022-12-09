@@ -15,9 +15,8 @@ public class OpenWeblinkPageStep {
         chubbpage.clickWeblinkLink();
     }
 
-
     @Then ("^the user can see the Weblink pages$")
-    public void openWeblinkPage(){
-        Assert.assertEquals("Texto esperado", chubbpage.weblinkResult());
+    public void openSalesMenu(){
+        Assert.assertTrue("No se muestra la bienvenida", chubbpage.showBienvenida());
     }
 }

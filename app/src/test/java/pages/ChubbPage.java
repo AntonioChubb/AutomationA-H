@@ -2,8 +2,9 @@ package pages;
 
 public class ChubbPage extends BasePage{
 
-    private String weblinklink = "";
-    private String weblinkpage = "";
+    private String weblinklink = "//body/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/a[1]";
+    private String weblinkpage = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]";
+
 
     public ChubbPage(){
         super(driver);
@@ -13,8 +14,8 @@ public class ChubbPage extends BasePage{
         clickElement(weblinklink);
     }
 
-    public String weblinkResult(){
-        return textFromElement(weblinkpage);
+    public boolean showBienvenida(){
+        return elementIsDisplayed(weblinkpage);
     }
     
 }

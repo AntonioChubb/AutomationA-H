@@ -29,7 +29,7 @@ public class EnterSalesPortaStep {
 
     @Then ("^user can see the Sales pages$")
     public void openCampaignMenu(){
-        Assert.assertEquals("texto esperado", weblinkPage.campaignMenu());
+        Assert.assertEquals("Campaign Selection", weblinkPage.campaignMenu());
     }
     
 }

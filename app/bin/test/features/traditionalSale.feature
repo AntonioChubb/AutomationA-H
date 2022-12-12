@@ -17,8 +17,7 @@ When the user select and type the campaign code in field Enter Campaign code
 Then the typed campaign appear in table below
 
 Scenario: Selecting the campaign in table to enable the sales button
-Given the user can see the campaign in table
-When the user click on campaign in table
+Given the user click on campaign in table
 Then the button the Sale button is enabled
 
 Scenario: Confirm the campaign to sales

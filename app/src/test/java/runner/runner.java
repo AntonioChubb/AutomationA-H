@@ -12,13 +12,13 @@ import pages.BasePage;
     features = "src/test/resources/features",
     glue = "steps",
     monochrome = true,
-    tags = "@testlogin"
+    tags = "@test"
 
 )
 
 public class runner {
     @AfterClass
     public static void cleanDriver(){
-        BasePage.closeBrowser();
+       // BasePage.closeBrowser();
     }
 }

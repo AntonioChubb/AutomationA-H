@@ -24,5 +24,4 @@ public class ShowCampaignStep {
     public void campaignInTable(){
         Assert.assertEquals("AR01005303", campaignPage.campaignMenu());
     }
-
 }

@@ -11,7 +11,7 @@ public class WeblinkPage extends BasePage {
         super(driver);
     }
 
-    public void hoverWeblinkMenu(){
+   /*public void hoverWeblinkMenu(){
         hoverOverElement(weblinkMenu);
     }
 
@@ -22,9 +22,16 @@ public class WeblinkPage extends BasePage {
    public void clickSaleOption(){
         clickElement(saleOption);
    }
+*/
+
+public void hoverWeblink(){
+    hoverOverElementWeblink();
+   }
+
 
    public String campaignMenu(){
     return textFromElement(campaignMenuText);
    }
+    
     
 }

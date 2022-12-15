@@ -1,33 +1,38 @@
-@test
+
 Feature: Testing all process to make a traditional sale
 
+@test
 Scenario: Open Weblink Sales
 When the user click on Weblink link
 Then the user can see the Weblink pages
 
+@test
 Scenario: Open the sales portal
 Given the user hover over Weblink menu
 When the user hover over option sales in list displayed
 And the user click in option sales in the new list displayed
 Then user can see the Sales pages
 
+@test
 Scenario: Show the campaign in table
 Given the user check the option Enable Auto Search
 When the user select and type the campaign code in field Enter Campaign code
 Then the typed campaign appear in table below
 
+@test
 Scenario: Selecting the campaign in table to enable the sales button
 Given the user click on campaign in table
 Then the button the Sale button is enabled
 
+@test
 Scenario: Confirm the campaign to sales
 When the user click on Sale button
 Then the user can see the Traditional Sale pages
 
+@test
 Scenario: Add policy holder
 Given the user click on button Add Policy holder
-When type in field Personal ID a valid ID number
-And press enter button in keyboard
+When type in field Personal ID a valid ID number and press enter button in keyboard
 Then the system fill all the required filds of form
 
 Scenario: Select a policy holder

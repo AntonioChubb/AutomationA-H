@@ -3,6 +3,7 @@ package pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -51,6 +52,11 @@ public class BasePage {
         Find(locator).sendKeys(textToWrite);
     }
 
+    public void writeEnter(String locator, String textToWrite){
+        Find(locator).clear();
+        Find(locator).sendKeys(textToWrite + Keys.ENTER);
+    }
+
     public void selectFromDropdownByValue(String locator, String valueToSelect){
         Select dropdown = new Select (Find(locator));
 
@@ -71,6 +77,10 @@ public class BasePage {
 
     public void hoverOverElement(String locator){
         action.moveToElement(Find(locator));
+    }
+
+    public void hoverOverElementWeblink(){
+        driver.navigate().to("https://lausd-wowsrv12.aceins.com/Weblink/Sales/CampaignSelection/Selection");
     }
 
     public void doubleClick(String locator){

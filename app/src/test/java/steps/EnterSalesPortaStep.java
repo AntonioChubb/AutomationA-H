@@ -13,18 +13,28 @@ public class EnterSalesPortaStep {
     WeblinkPage weblinkPage = new WeblinkPage();
 
     @Given ("^the user hover over Weblink menu$")
-    public void hoverOverWeblinkMenu(){
+    public void hoverOverWeblink(){
+      /*   try{
+            Thread.sleep(5000);
+        }catch(Exception e){}
         weblinkPage.hoverWeblinkMenu();
+       */
+
+       weblinkPage.hoverWeblink();
     }
 
     @When ("^the user hover over option sales in list displayed$")
     public void hoverSaleList(){
-        weblinkPage.hoverSalesList();
+      /* weblinkPage.hoverSalesList();
+        try{
+            Thread.sleep(5000);
+        }catch(Exception e){}
+         */ 
     }
 
     @And ("^the user click in option sales in the new list displayed$")
     public void clickSale(){
-        weblinkPage.clickSaleOption();
+       // weblinkPage.clickSaleOption();
     }
 
     @Then ("^user can see the Sales pages$")

@@ -134,4 +134,13 @@ public class BasePage {
     public List<WebElement> bringMeAllElements(String locator){
         return driver.findElements(By.className(locator));
     }
+
+    public void clickAndDrag(String locator, int axeX, int axeY){
+        action.dragAndDropBy(Find(locator), axeX, axeY);
+    }
+
+    public void hoverOverElementAndClick(String locator, int axeX, int axeY){
+        action.moveToElement(Find(locator), axeX, axeY).click();
+    }
+    
 }

@@ -24,6 +24,9 @@ public class AddPolicyHolderStep {
 
     @And ("^the system fill all the required filds of form and click on Accept button$")
     public void clickOnAcceptButton(){
+        try{
+            Thread.sleep(6000);
+        }catch(Exception e){}
         salesPage.clickAcceptButton();
     }
 

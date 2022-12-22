@@ -103,7 +103,7 @@ public class BasePage {
         Find(cellToFill).sendKeys(stringToSend);
     }
 
-    public void switchToiFrame(String iFrameIDIndex){
+    public void switchToiFrame(int iFrameIDIndex){
         driver.switchTo().frame(iFrameIDIndex);
     }
 

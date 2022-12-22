@@ -33,22 +33,22 @@ Then the user can see the Traditional Sale pages
 Scenario: Add policy holder
 Given the user click on button Add Policy holder
 When type in field Personal ID a valid ID number and press enter button in keyboard
-Then the system fill all the required filds of form
-
-Scenario: Select a policy holder
-When the user click on Accept button
+And the system fill all the required filds of form and click on Accept button
 Then the policy holder is added to tradicional sale customer table
 
+@test
 Scenario: Add product to traditional Sale
 Given the user click on plus page icon of table campaign Availble products
 When select an item of list benefit level
 And click on button Accept
 Then the product is added to Campaign available products
 
+@test
 Scenario: Confirm the traditional sales
 When the user click on Next button
 Then the user can see the Payment Info pages
 
+@test
 Scenario: Choice a payment options
 When the user select a payment frequency
 And select the credit card type

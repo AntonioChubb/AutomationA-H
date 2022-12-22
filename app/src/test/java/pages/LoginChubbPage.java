@@ -20,8 +20,7 @@ public class LoginChubbPage extends BasePage {
     }
 
     public void enterUsername(String username){
-        write(usernameField, username);
-       
+        write(usernameField, username); 
     }
 
     public void enterPassword(String password){

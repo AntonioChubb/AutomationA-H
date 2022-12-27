@@ -11,12 +11,13 @@ public class PaymentOptionsStep {
 
 PaymentPage paymentPage = new PaymentPage();
 
-@When ("^the user select a payment frequency$")
+/*@When ("^the user select a payment frequency$")
 public void selectThePaymentFrequency(){
     paymentPage.selectPaymentFrequency("Monthly");
 }
+*/
 
-@And ("^select the credit card type$")
+@When ("^select the credit card type$")
 public void selectTheCreditCardType(){
     paymentPage.selectCreditCardType("AR - VISA");
 }

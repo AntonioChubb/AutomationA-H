@@ -4,8 +4,6 @@ public class CampaignPage extends BasePage {
 
     private String enableAutoSearchCheckBox = "//input[@id='autosearch']";
     private String campaignField = "//input[@id='txtSearch']";
-    private String campaignTable = "//td[contains(text(),'AR01005303')]";
-    private String campaignSeleted = "//td[contains(text(),'AR01005303')]";
     private String saleButton = "//input[@id='btnSale']";
     private String  salePage = "//body/div[@id='block']/div[@id='container']/div[2]/div[1]/div[1]/h2[1]";
 
@@ -22,12 +20,14 @@ public class CampaignPage extends BasePage {
         write(campaignField, campaignCode);
     }
 
-    public String campaignMenu(){
+    public String campaignMenu(String campaignCode){
+        String campaignTable = "//td[contains(text(),'"+campaignCode+"')]";
         return textFromElement(campaignTable);
        }
 
-    public void clickCampaignInTable(){
-        clickElement(campaignSeleted);
+    public void clickCampaignInTable(String campaignCode){
+        String campaignTable = "//td[contains(text(),'"+campaignCode+"')]";
+        clickElement(campaignTable);
     }
 
     public boolean saleButtonEnabled(){

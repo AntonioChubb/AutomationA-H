@@ -10,9 +10,9 @@ public class SelectCampaignStep {
 
     CampaignPage campaignPage = new CampaignPage();
     
-     @Given ("^the user click on campaign in table$")
-    public void clickCampaignInTable(){
-        campaignPage.clickCampaignInTable();
+     @Given ("^the user click on (.+) in table$")
+    public void clickCampaignInTable(String campaignCode){
+        campaignPage.clickCampaignInTable(campaignCode);
     }
 
     @Then ("^the button the Sale button is enabled$")

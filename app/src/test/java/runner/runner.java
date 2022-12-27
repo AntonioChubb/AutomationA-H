@@ -1,6 +1,7 @@
 package runner;
 
 import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 import cucumber.api.CucumberOptions;
@@ -12,13 +13,18 @@ import pages.BasePage;
     features = "src/test/resources/features",
     glue = "steps",
     monochrome = true,
-    tags = "@test"
+    tags = {"@login", "@traditionalSale"}
 
 )
 
 public class runner {
+    @BeforeClass
+    public static void beginMaximize(){
+        BasePage.maximize();
+    }
+
     @AfterClass
     public static void cleanDriver(){
-       // BasePage.closeBrowser();
+       BasePage.closeBrowser();
     }
 }

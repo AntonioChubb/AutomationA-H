@@ -19,7 +19,7 @@ public class AddProductToSaleStep {
 
     @When ("^select an item of list benefit level$")
     public void selectTheBenefitLevel(){
-        salesPage.selectBenefitLevel("Nivel 200.000");
+        salesPage.selectBenefitLevel("Benefit Level 1");
     }
 
     @And ("^click on button Accept$")

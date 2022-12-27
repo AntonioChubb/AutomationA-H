@@ -3,9 +3,10 @@ package pages;
 public class SalesPage extends BasePage {
 
     private String buttonAddPolicyHolder = "//input[@id='btnAddPolicyHolder']";
+    private String buttonAddSpouse = "//input[@id='btnAddSpouse']";
+    private String buttonAddDependant = "//input[@id='btnAddDependant']";
     private String personalIDField = "//input[@id='txtPersonalId']";
     private String acceptButton = "//body/div[4]/div[3]/div[1]/button[2]";
-    private String holderName = "//tbody[1]/tr[2]/td[2]/a[contains(text()/'MARIA ALBA URRISTE')]";
     private String addProductImage = "//tbody[1]/tr[2]/td[4]/a[1]/img[1]";
     private String benefitLevelDropdown = "//select[@id='ddlBenefitLevel']";
     private String aceptProductButton = "//button[@id='btnAcceptPP']";
@@ -21,6 +22,14 @@ public class SalesPage extends BasePage {
         clickElement(buttonAddPolicyHolder);
     }
 
+    public void clickAddSpouse(){
+        clickElement(buttonAddSpouse);
+    }
+
+    public void clickAddDependant(){
+        clickElement(buttonAddDependant);
+    }
+    
     public void enterPersonalID(String personalID){
         writeEnter(personalIDField, personalID);
     }
@@ -29,7 +38,8 @@ public class SalesPage extends BasePage {
         clickElement(acceptButton);
     }
     
-    public String showHolderInTable(){
+    public String showHolderInTable(String name){
+        String holderName = "//a[contains(text()/'"+name+"')]";
         return textFromElement(holderName);
        }
 

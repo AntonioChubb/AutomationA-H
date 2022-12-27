@@ -2,7 +2,7 @@ package pages;
 
 public class PaymentPage extends BasePage {
 
-    private String paymentFrequencyDropdown = "//select[@id='PaymentFrecuency']";
+    //private String paymentFrequencyDropdown = "//select[@id='PaymentFrecuency']";
     private String creditCardDropdown = "//select[@id='Code']";
     private String creditCardMonthDropdown = "//select[@id='ExpirationMonth']";
     private String creditCardYearDropdown = "//select[@id='ExpirationYear']";
@@ -15,9 +15,10 @@ public class PaymentPage extends BasePage {
         super(driver);
     }
 
-    public void selectPaymentFrequency(String frequency){
+    /*public void selectPaymentFrequency(String frequency){
         selectFromDropdownByText(paymentFrequencyDropdown, frequency);
     }
+    */
 
     public void selectCreditCardType(String creditCardType){
         selectFromDropdownByText(creditCardDropdown, creditCardType);

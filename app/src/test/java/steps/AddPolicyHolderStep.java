@@ -12,9 +12,9 @@ public class AddPolicyHolderStep {
     
     SalesPage salesPage = new SalesPage();
 
-    @Given ("^the user click on button Add Policy holder$")
-    public void clickInAddPolicyHolder(){
-        salesPage.clickAddPolicyHolder();
+    @Given ("^the user click on button (.+)$")
+    public void clickInAddPolicyHolder(String button){
+        salesPage.clickAddPolicyHolder(button);
     }
 
     @When ("^type in field Personal ID (.+) and press enter button in keyboard$")

@@ -37,30 +37,34 @@ When the user click on Sale button
 Then the user can see the Traditional Sale pages
 
 Scenario Outline: Add principal policy holder
-Given the user click on button Add Policy holder
+Given the user click on button <Button>
 When type in field Personal ID <IDNumber> and press enter button in keyboard
 And the system fill all the required filds of form and click on Accept button
 Then the <name> is added to tradicional sale customer table
 Examples:
-|IDNumber    |name              |
-|17459844    |MARIA ALBA URRISTE|
+|IDNumber    |name                | Button            |
+|17459844    |MARIA ALBA URRISTE  |btnAddPolicyHolder |
 
-Scenario: Add product to traditional Sale
-Given the user click on plus page icon of table campaign Availble products
-When select an item of list benefit level
+Scenario Outline: Add product to traditional Sale
+Given the user click on plus page <icon> of table campaign Availble products
+When select an <item> of list benefit level
 And click on button Accept
-Then the product is added to Campaign available products
+Then the <product> is added to Campaign available products
+Examples:
+|icon |item             | product  |
+|4    |Benefit Level 2  |4         |
 
 Scenario: Confirm the traditional sales
 When the user click on Next button
 Then the user can see the Payment Info pages
 
 Scenario: Choice a payment options
-#When the user select a payment frequency
 When select the credit card type
-And choice the month and year of expiration date
-And type the credit card number and security code
-And the user can click on the Next button
+And choice the month and expiration date year
+Then type the credit card number and security code
+
+Scenario: Confirm the payment options
+When the user click on the Next button
 Then the user can see the Sale confirmation page
 
 Scenario: Confirm sale

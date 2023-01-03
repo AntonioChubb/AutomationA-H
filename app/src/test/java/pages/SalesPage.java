@@ -2,15 +2,10 @@ package pages;
 
 public class SalesPage extends BasePage {
 
-    private String buttonAddPolicyHolder = "//input[@id='btnAddPolicyHolder']";
-    private String buttonAddSpouse = "//input[@id='btnAddSpouse']";
-    private String buttonAddDependant = "//input[@id='btnAddDependant']";
     private String personalIDField = "//input[@id='txtPersonalId']";
     private String acceptButton = "//body/div[4]/div[3]/div[1]/button[2]";
-    private String addProductImage = "//tbody[1]/tr[2]/td[4]/a[1]/img[1]";
     private String benefitLevelDropdown = "//select[@id='ddlBenefitLevel']";
     private String aceptProductButton = "//button[@id='btnAcceptPP']";
-    private String newIcon = "//tbody/tr[2]/td[4]/a[1]/img[1]";
     private String nextButton = "//input[@id='nextButton']";
     private String paymentInfoPage = "//div[@id='PayData']";
 
@@ -18,18 +13,11 @@ public class SalesPage extends BasePage {
         super(driver);
     }
 
-    public void clickAddPolicyHolder(){
+    public void clickAddPolicyHolder(String button){
+        String buttonAddPolicyHolder = "//input[@id='"+button+"']";
         clickElement(buttonAddPolicyHolder);
     }
 
-    public void clickAddSpouse(){
-        clickElement(buttonAddSpouse);
-    }
-
-    public void clickAddDependant(){
-        clickElement(buttonAddDependant);
-    }
-    
     public void enterPersonalID(String personalID){
         writeEnter(personalIDField, personalID);
     }
@@ -43,7 +31,8 @@ public class SalesPage extends BasePage {
         return textFromElement(holderName);
        }
 
-    public void clickAddProductIcon(){
+    public void clickAddProductIcon(Integer icon){
+        String addProductImage = "//tbody[1]/tr[2]/td["+icon+"]/a[1]/img[1]";
         clickElement(addProductImage);
     }
 
@@ -55,7 +44,8 @@ public class SalesPage extends BasePage {
         clickElement(aceptProductButton);
     }
 
-    public boolean iconDisplayed(){
+    public boolean iconDisplayed(Integer newIconShow){
+        String newIcon = "//tbody/tr[2]/td["+newIconShow+"]/a[2]/img[1]";
         return elementIsDisplayed(newIcon);
     }
 

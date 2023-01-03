@@ -37,28 +37,51 @@ When the user click on Sale button
 Then the user can see the Traditional Sale pages
 
 Scenario Outline: Add principal policy holder
-Given the user click on button Add Policy holder
+Given the user click on button <Button>
 When type in field Personal ID <IDNumber> and press enter button in keyboard
 And the system fill all the required filds of form and click on Accept button
 Then the <name> is added to tradicional sale customer table
 Examples:
-|IDNumber    |name                             |
-|79005107    |CARLOS HOLMES TRUJILLO VALENZUELA|
+|IDNumber    |name                               | Button            |
+|79005107    |CARLOS HOLMES TRUJILLO VALENZUELA  |btnAddPolicyHolder |
+|43110675    |JAZMIN ASTRID RAMIREZ GIRALDO      |btnAddSpouse       |
+|37924951    |ROSALBA PEREZ BAUTISTA             |btnAddDependant    |
 
-Scenario Outline: Add spouse to policy
-Given the user click on button Add Spouse
-When type in field Personal ID <IDNumber> and press enter button
-And the system fill all the required filds of form and click Accept button
-Then the <name> is added to customer table
+Scenario Outline: Add product to traditional Sale
+Given the user click on plus page <icon> of table campaign Availble products
+When select an <item> of list benefit level
+And click on button Accept
+Then the <product> is added to Campaign available products
 Examples:
-|IDNumber    |name                         |
-|43110675    |JAZMIN ASTRID RAMIREZ GIRALDO|
+|icon |item                     | product  |
+|4    |Plan B (Grupo Familiar)  |4         |
+|5    |Plan B (Grupo Familiar)  |5         |
+|6    |Plan B (Grupo Familiar)  |6         |
 
-Scenario Outline: Add dependant to policy
-Given the user click on button Add Dependant
-When type in field PersonalID <IDNumber> and press enter button
-And the system fill all the required filds form and click Accept button
-Then the <name> is added to the customer table
+Scenario: Confirm the traditional sales
+When the user click on Next button
+Then the user can see the Payment Info pages
+
+Scenario Outline: Select the payment Frequency
+#When user can see the payment frequency section
+Then the user can choice the <paymentFrequency>
 Examples:
-|IDNumber    |name                  |
-|37924951    |ROSALBA PEREZ BAUTISTA|
+|paymentFrequency |
+|Annual           |
+
+Scenario Outline: Choice a Direct Debit payment options
+When user click on Direct Debit Option 
+And Select <Bank> from the list
+And Enter the <AccountNumber>
+Then Select the <DebitDay> that prefer
+Examples:
+|Bank                |AccountNumber      |DebitDay |
+|CO - Citibank - AHO |0154623478         |5        |
+
+Scenario: Confirm the payment options
+When the user click on the Next button
+Then the user can see the Sale confirmation page
+
+Scenario: Confirm sale
+When the user click in button confirm sale
+Then Appear the Sale Result page

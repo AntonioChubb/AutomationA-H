@@ -23,6 +23,7 @@ dependencies {
     implementation 'io.cucumber:cucumber-java:4.2.0'
     testImplementation 'io.cucumber:cucumber-junit:4.2.0'
     implementation 'org.slf4j:slf4j-simple:1.7.25'
+    implementation 'com.aventstack:extentreports-cucumber4-adapter:1.0.7'
 }
 
 test{

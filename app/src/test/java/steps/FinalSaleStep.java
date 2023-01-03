@@ -19,5 +19,8 @@ public class FinalSaleStep {
     @Then ("^Appear the Sale Result page$")
     public void showSaleResult(){
         Assert.assertEquals("Sale Result", finalPage.saleResultPage());
+        try{
+            Thread.sleep(4000);
+        }catch(Exception e){}
     }
 }

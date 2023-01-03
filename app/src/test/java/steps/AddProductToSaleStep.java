@@ -12,14 +12,14 @@ public class AddProductToSaleStep {
     
     SalesPage salesPage = new SalesPage();
 
-    @Given ("^the user click on plus page icon of table campaign Availble products$")
-    public void clickOnAddProductIcon(){
-        salesPage.clickAddProductIcon();
+    @Given ("^the user click on plus page (.+) of table campaign Availble products$")
+    public void clickOnAddProductIcon(Integer icon){
+        salesPage.clickAddProductIcon(icon);
     }
 
-    @When ("^select an item of list benefit level$")
-    public void selectTheBenefitLevel(){
-        salesPage.selectBenefitLevel("Benefit Level 1");
+    @When ("^select an (.+) of list benefit level$")
+    public void selectTheBenefitLevel(String level){
+        salesPage.selectBenefitLevel(level);
     }
 
     @And ("^click on button Accept$")
@@ -27,8 +27,8 @@ public class AddProductToSaleStep {
         salesPage.clickProductAcceptButton();
     }
 
-    @Then ("^the product is added to Campaign available products$")
-    public void showNewIcon(){
-        Assert.assertTrue("No se muestra el nuevo icono", salesPage.iconDisplayed());
+    @Then ("^the (.+) is added to Campaign available products$")
+    public void showNewIcon(Integer newIcon){
+        Assert.assertTrue("No se muestra el nuevo icono", salesPage.iconDisplayed(newIcon));
     }
 }

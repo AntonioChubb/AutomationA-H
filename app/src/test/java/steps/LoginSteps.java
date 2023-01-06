@@ -17,8 +17,8 @@ public class LoginSteps {
 
     @When ("^the user enter a valid username and password$")
     public void enterUsernamePassword(){
-        loginchubb.enterUsername("dmosquera1973@gmail.com");
-        loginchubb.enterPassword("Chubb123456$");   
+        loginchubb.enterUsername("antonio.montilla@logicstudio.net");
+        loginchubb.enterPassword("Tonito92197.");   
     }
 
     @And ("^click on Iniciar session button$")

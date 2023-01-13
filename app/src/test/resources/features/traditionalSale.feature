@@ -1,4 +1,4 @@
-@traditionalSale
+@traditional
 Feature: Testing all process to make a traditional sale
 
 Scenario: Login in sales portal Chubb
@@ -47,11 +47,11 @@ Examples:
 
 Scenario Outline: Add product to traditional Sale
 Given the user click on plus page <icon> of table campaign Availble products
-When select an <item> of list benefit level
+When select the <level> level of list benefit level in screen
 And click on button Accept
 Then the <product> is added to Campaign available products
 Examples:
-|icon |item             | product  |
+|icon |level            | product  |
 |4    |Benefit Level 2  |4         |
 
 Scenario: Confirm the traditional sales

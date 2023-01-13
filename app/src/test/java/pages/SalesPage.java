@@ -121,4 +121,6 @@ public class SalesPage extends BasePage {
     public void clickCloseButton(){
         clickElement(closeButton);
     }
+
+    
 }

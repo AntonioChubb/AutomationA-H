@@ -1,4 +1,4 @@
-@weblink3
+@giro
 Feature: Pay with giro. Bourderoux pay, other payer, new polici holder and additional holder
 
 Scenario: Login in sales portal Chubb
@@ -69,4 +69,23 @@ Examples:
 
 Scenario: Confirm the sales
 When the user click on Next button
-Then the user can see the Payment Info pages    
+Then the user can see the Payment Info pages
+
+Scenario Outline: Type the expiration date
+Then the user type the expiration date <expirationDate> 
+Examples:
+|expirationDate |
+|01302023       |
+
+Scenario Outline: Fill Giro payment Method
+Given the user select the giro collector <collector> option
+When select the <bank> bank from list
+And type branch <branch> and select the first item of list
+Then type the account number <account>
+Examples:
+|collector         |bank              |branch             |account     |
+|BZ - BANCOS - 01  |BZ - CITIBANK     |00001 /| 000000001  |03545762105 |
+
+Scenario: Confirm the payment options
+When the user click on the Next button
+Then the user can see the Sale confirmation page

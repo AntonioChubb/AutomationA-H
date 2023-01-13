@@ -9,11 +9,11 @@ public class FinalPage extends BasePage {
         super(driver);
     }
 
-   public void clickConfirmSale(){
+    public void clickConfirmSale(){
         clickElement(confirmSaleButton);
-   }
+    }
     
-   public String saleResultPage(){
-    return textFromElement(saleResult);
-}
+    public String saleResultPage(){
+        return textFromElement(saleResult);
+    }
 }

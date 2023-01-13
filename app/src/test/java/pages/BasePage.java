@@ -61,6 +61,11 @@ public class BasePage {
         Find(locator).sendKeys(textToWrite + Keys.ENTER);
     }
 
+    public void writePlusKeys(String locator, String textToWrite){
+        Find(locator).clear();
+        Find(locator).sendKeys(textToWrite + Keys.ARROW_DOWN + Keys.ENTER);
+    }
+
     public void selectFromDropdownByValue(String locator, String valueToSelect){
         Select dropdown = new Select (Find(locator));
 

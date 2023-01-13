@@ -49,11 +49,11 @@ Examples:
 
 Scenario Outline: Add product to traditional Sale
 Given the user click on plus page <icon> of table campaign Availble products
-When select an <item> of list benefit level
+When select the <level> level of list benefit level in screen
 And click on button Accept
 Then the <product> is added to Campaign available products
 Examples:
-|icon |item                     | product  |
+|icon |level                    | product  |
 |4    |Plan B (Grupo Familiar)  |4         |
 |5    |Plan B (Grupo Familiar)  |5         |
 |6    |Plan B (Grupo Familiar)  |6         |
@@ -85,3 +85,11 @@ Then the user can see the Sale confirmation page
 Scenario: Confirm sale
 When the user click in button confirm sale
 Then Appear the Sale Result page
+
+Scenario: Download and Print Proof of Acceptance
+Given the user click on button Print Proof of Acceptance
+When click on Dowload Proof of Acceptance Button 
+And the PDF file is dowloaded
+And click on Print Proof of Acceptance Button 
+And click on Imprimir Button
+Then The user click on Cancel button of Preview of CAS

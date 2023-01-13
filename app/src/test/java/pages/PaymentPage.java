@@ -15,6 +15,12 @@ public class PaymentPage extends BasePage {
     private String bankDropdown = "//select[@id='DirectDebitBank']";
     private String accountField = "//input[@id='data']";
     private String dayDropdown = "//select[@id='DirectDebitDebitDay']";
+    private String collectorDropdown = "//select[@id='BorderauxCollector']";
+    private String expirationDateField = "//input[@id='PolicyExpirationDate']";
+    private String giroCollectorDropdown = "//select[@id='GiroCollector']";
+    private String giroBankDropdown = "//select[@id='GiroBank']";
+    private String branchField = "//select[@id='GiroBranch']";
+    private String giroAccountNumber = "//input[@id='data']";
     
     public PaymentPage(){
         super(driver);
@@ -78,6 +84,30 @@ public class PaymentPage extends BasePage {
 
     public void selectDebitDay(String debitDay){
         selectFromDropdownByValue(dayDropdown, debitDay);
+    }
+
+    public void selectCollector(String collector){
+        selectFromDropdownByText(collectorDropdown, collector);
+    }
+
+    public void writeExpirationDate(String expirationDate){
+        write(expirationDateField, expirationDate);
+    }
+
+    public void selectGiroCollector(String giroCollector){
+        selectFromDropdownByText(giroCollectorDropdown, giroCollector);
+    }
+
+    public void selectGiroBank(String giroBank){
+        selectFromDropdownByText(giroBankDropdown, giroBank);
+    }
+
+    public void typeGiroBranch(String branch){
+        writePlusKeys(branchField, branch);
+    }
+
+    public void typeGiroAccountNumber(String account){
+        write(giroAccountNumber, account);
     }
 }
 

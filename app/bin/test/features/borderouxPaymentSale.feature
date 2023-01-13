@@ -1,5 +1,5 @@
-@traditional
-Feature: Testing all process to make a traditional sale
+@borderoux
+Feature: Group test with Colombian Campaign and Bourderoux payment
 
 Scenario: Login in sales portal Chubb
 Given The user access the Chubb sales portal
@@ -23,14 +23,14 @@ When the user select and type the campaign <campaignCode> in field Enter Campaig
 Then the typed <campaignCode> appear in table below
 Examples:
 |campaignCode|
-|AR12002301  |
+|CO19008003  |
 
 Scenario Outline: Selecting the campaign in table to enable the sales button
 Given the user click on <campaignCode> in table
 Then the button the Sale button is enabled
 Examples:
 |campaignCode|
-|AR12002301  |
+|CO19008003  |
 
 Scenario: Confirm the campaign to sales
 When the user click on Sale button
@@ -42,8 +42,8 @@ When type in field Personal ID <IDNumber> and press enter button in keyboard
 And the system fill all the required filds of form and click on Accept button
 Then the <name> is added to tradicional sale customer table
 Examples:
-|IDNumber    |name                | Button            |
-|17459844    |MARIA ALBA URRISTE  |btnAddPolicyHolder |
+|IDNumber    |name                               | Button            |
+|9203841     |RAFAEL ENRIQUE CABEZAS ZUÑIGA      |btnAddPolicyHolder |
 
 Scenario Outline: Add product to traditional Sale
 Given the user click on plus page <icon> of table campaign Availble products
@@ -51,17 +51,18 @@ When select the <level> level of list benefit level in screen
 And click on button Accept
 Then the <product> is added to Campaign available products
 Examples:
-|icon |level            | product  |
-|4    |Benefit Level 2  |4         |
+|icon |level             | product  |
+|4    |PLAN B PREMIUM    |4         |
 
 Scenario: Confirm the traditional sales
 When the user click on Next button
 Then the user can see the Payment Info pages
 
-Scenario: Choice a payment options
-When select the credit card type
-And choice the month and expiration date year
-Then type the credit card number and security code
+Scenario Outline: Select Borderoux Payment Method
+Then the user select the collector <collector>
+Examples:
+|collector       |
+|CO - CENCOSUD   |
 
 Scenario: Confirm the payment options
 When the user click on the Next button

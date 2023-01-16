@@ -17,7 +17,7 @@ public class AddProductToSaleStep {
         salesPage.clickAddProductIcon(icon);
     }
 
-    @When ("^select an (.+) of list benefit level$")
+    @When ("^select the (.+) level of list benefit level in screen$")
     public void selectTheBenefitLevel(String level){
         salesPage.selectBenefitLevel(level);
     }

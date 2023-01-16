@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.SendKeysAction;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -63,7 +64,7 @@ public class BasePage {
 
     public void writePlusKeys(String locator, String textToWrite){
         Find(locator).clear();
-        Find(locator).sendKeys(textToWrite + Keys.ARROW_DOWN + Keys.ENTER);
+        Find(locator).sendKeys(textToWrite + Keys.ARROW_DOWN + Keys.ARROW_DOWN + Keys.ENTER);
     }
 
     public void selectFromDropdownByValue(String locator, String valueToSelect){

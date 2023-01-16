@@ -19,8 +19,17 @@ public class PaymentPage extends BasePage {
     private String expirationDateField = "//input[@id='PolicyExpirationDate']";
     private String giroCollectorDropdown = "//select[@id='GiroCollector']";
     private String giroBankDropdown = "//select[@id='GiroBank']";
-    private String branchField = "//select[@id='GiroBranch']";
+    private String branchField = "//input[@id='GiroBranch']";
     private String giroAccountNumber = "//input[@id='data']";
+    private String differentPayerCheckbox = "//input[@id='PolicyPayerDiferentPolicyHolder']";
+    private String payerIDField = "//input[@id='PersonalId']";
+    private String payerNameField = "//input[@id='FirstName']";
+    private String payerLastnameField = "//input[@id='Lastname']";
+    private String payerBirthdatField = "//input[@id='Birthdate']";
+    private String payerSexSelect = "//select[@id='Sex']";
+    private String payerAdress1Field = "//input[@id='Address1']";
+    private String payerProvinceSelect = "//select[@id='ProvinceId']";
+    private String payerCityField = "//input[@id='City']";
     
     public PaymentPage(){
         super(driver);
@@ -108,6 +117,42 @@ public class PaymentPage extends BasePage {
 
     public void typeGiroAccountNumber(String account){
         write(giroAccountNumber, account);
+    }
+
+    public void checkDifferentPayer(){
+        clickElement(differentPayerCheckbox);
+    }
+
+    public  void typePayerID(String payerID){
+        write(payerIDField, payerID);
+    }
+
+    public  void typePayerName(String payerName){
+        write(payerNameField, payerName);
+    }
+
+    public  void typePayerLastname(String payerLastname){
+        write(payerLastnameField, payerLastname);
+    }
+
+    public  void typePayerBirthdate(String payerBirthdate){
+        write(payerBirthdatField, payerBirthdate);
+    }
+
+    public void selectPayerSex(String payerSex){
+        selectFromDropdownByText(payerSexSelect, payerSex);
+    }
+
+    public  void typePayerAddress1(String payerAddress1){
+        write(payerAdress1Field, payerAddress1);
+    }
+
+    public void selectPayerProvince(String payerProvince){
+        selectFromDropdownByText(payerProvinceSelect, payerProvince);
+    }
+
+    public  void typePayerCity(String payerCity){
+        write(payerCityField, payerCity);
     }
 }
 

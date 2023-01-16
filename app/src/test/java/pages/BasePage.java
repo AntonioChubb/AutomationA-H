@@ -62,6 +62,11 @@ public class BasePage {
         Find(locator).sendKeys(textToWrite + Keys.ENTER);
     }
 
+    public void writeTab(String locator, String textToWrite){
+        Find(locator).clear();
+        Find(locator).sendKeys(textToWrite + Keys.TAB);
+    }
+
     public void writePlusKeys(String locator, String textToWrite){
         Find(locator).clear();
         Find(locator).sendKeys(textToWrite + Keys.ARROW_DOWN + Keys.ARROW_DOWN + Keys.ENTER);

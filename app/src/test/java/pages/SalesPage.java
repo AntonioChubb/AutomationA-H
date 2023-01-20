@@ -3,7 +3,7 @@ package pages;
 public class SalesPage extends BasePage {
 
     private String personalIDField = "//input[@id='txtPersonalId']";
-    private String acceptButton = "//body/div[4]/div[3]/div[1]/button[2]";
+    private String acceptButton = "//span[contains(text(),'Accept')]";
     private String benefitLevelDropdown = "//select[@id='ddlBenefitLevel']";
     private String aceptProductButton = "//button[@id='btnAcceptPP']";
     private String nextButton = "//input[@id='nextButton']";
@@ -19,6 +19,17 @@ public class SalesPage extends BasePage {
     private String relationshipDropdown = "//select[@id='relationship']";
     private String saveBeneficiaryButton = "//input[@id='submitBtn']";
     private String closeButton = "//span[contains(text(),'Close')]";
+    private String newHolderNameField  = "//input[@id='txtFirstName']";
+    private String newHolderLastnameField = "//input[@id='txtLastName']";
+    private String newHolderBirthdateField = "//input[@id='txtBirthDate']";
+    private String newHolderMailField = "//input[@id='txtEmail']";
+    private String newHolderSexDropdown = "//select[@id='ddlSex']";
+    private String homeCheckbox = "//input[@id='HomeAddressChk']";
+    private String newHolderAddress1Field =  "//input[@id='txtAddress1219']";
+    private String newHolderProvinceDropdown =  "//select[@id='ddlProvince219']";
+    private String newHolderCityField = "//input[@id='txtCity219']";
+    private String quoteButton = "//input[@id='Quote']";
+  
 
     public SalesPage(){
         super(driver);
@@ -62,6 +73,10 @@ public class SalesPage extends BasePage {
 
     public void clickNextButton(){
         clickElement(nextButton);
+    }
+
+    public void clickQuoteButton(){
+        clickElement(quoteButton);
     }
 
     public boolean paymentInfoPage(){
@@ -122,5 +137,48 @@ public class SalesPage extends BasePage {
         clickElement(closeButton);
     }
 
-    
+    public void enterNewPersonalID(String newPersonalID){
+        writeTab(personalIDField, newPersonalID);
+    }
+
+    public void enterNewHolderName(String newHolderName){
+        write(newHolderNameField, newHolderName);
+    }
+
+    public void enterNewHolderLastname(String newHolderLastname){
+        write(newHolderLastnameField, newHolderLastname);
+    }
+
+    public void enterNewHolderBirthdate(String newHolderBirthdate){
+        write(newHolderBirthdateField, newHolderBirthdate);
+    }
+
+    public void enterNewHolderMail(String newHolderMail){
+        write(newHolderMailField, newHolderMail);
+    }
+
+    public void selectNewHolderSex(String newHolderSex){
+        selectFromDropdownByText(newHolderSexDropdown, newHolderSex);
+    }
+
+    public void MarkHomeCheckbox(){
+        clickElement(homeCheckbox);
+    }
+
+    public void enterNewHolderAddress1(String newHolderAddress1){
+        write(newHolderAddress1Field, newHolderAddress1);
+    }
+
+    public void selectNewHolderProvince(String newHolderProvince){
+        selectFromDropdownByText(newHolderProvinceDropdown, newHolderProvince);
+    }
+
+    public void enterNewHolderCity(String newHolderCity){
+        write(newHolderCityField, newHolderCity);
+    }
+
+    public String showNewHolderInTable(String name){
+        String newHolderName = "//a[contains(text(),'"+name+"')]";
+        return textFromElement(newHolderName);
+       }
 }

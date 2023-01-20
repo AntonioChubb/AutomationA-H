@@ -6,6 +6,8 @@ public class CampaignPage extends BasePage {
     private String campaignField = "//input[@id='txtSearch']";
     private String saleButton = "//input[@id='btnSale']";
     private String  salePage = "//body/div[@id='block']/div[@id='container']/div[2]/div[1]/div[1]/h2[1]";
+    private String quoteButton = "//input[@id='btnQuote']";
+    private String quoteSection = "//div[@id='contentQuoteValue']";
 
 
     public CampaignPage(){
@@ -38,7 +40,15 @@ public class CampaignPage extends BasePage {
         clickElement(saleButton);
     }
 
+    public void clickQuoteButton(){
+        clickElement(quoteButton);
+    }
+
     public boolean showTheSalePage(){
         return elementIsDisplayed(salePage);
+    }
+
+    public boolean showTheQuoteValue(){
+        return elementIsDisplayed(quoteSection);
     }
 }

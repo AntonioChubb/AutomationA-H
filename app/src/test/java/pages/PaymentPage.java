@@ -4,6 +4,7 @@ public class PaymentPage extends BasePage {
 
     private String paymentFrequencySection = "//h3[@id='ui-accordion-1-header-0']";
     private String paymentFrequencyDropdown = "//select[@id='PaymentFrecuency']";
+    private String paymentQuoteFrequencyDropdown = "//select[@id='paymentFrequencyCode']";
     private String creditCardDropdown = "//select[@id='Code']";
     private String creditCardMonthDropdown = "//select[@id='ExpirationMonth']";
     private String creditCardYearDropdown = "//select[@id='ExpirationYear']";
@@ -30,6 +31,7 @@ public class PaymentPage extends BasePage {
     private String payerAdress1Field = "//input[@id='Address1']";
     private String payerProvinceSelect = "//select[@id='ProvinceId']";
     private String payerCityField = "//input[@id='City']";
+    private String quoteAcceptButton = "//body/div[5]/div[3]/div[1]/button[1]/span[contains(text(),'Accept')]";
     
     public PaymentPage(){
         super(driver);
@@ -41,6 +43,10 @@ public class PaymentPage extends BasePage {
 
     public void selectPaymentFrequency(String frequency){
         selectFromDropdownByText(paymentFrequencyDropdown, frequency);
+    }
+
+    public void selectQuotePaymentFrequency(String quoteFrequency){
+        selectFromDropdownByText(paymentQuoteFrequencyDropdown, quoteFrequency);
     }
     
     public void selectCreditCardType(String creditCardType){
@@ -153,6 +159,10 @@ public class PaymentPage extends BasePage {
 
     public  void typePayerCity(String payerCity){
         write(payerCityField, payerCity);
+    }
+
+    public void clickQuoteAcceptButton(){
+        clickElement(quoteAcceptButton);
     }
 }
 

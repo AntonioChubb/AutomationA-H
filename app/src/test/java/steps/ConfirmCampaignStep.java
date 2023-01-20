@@ -15,8 +15,19 @@ public class ConfirmCampaignStep {
         campaignPage.clickSalesButton();
     }
 
+    @When ("^the user click on Quote button$")
+    public void clickQuoteButton(){
+        campaignPage.clickQuoteButton();
+    }
+
     @Then ("^the user can see the Traditional Sale pages$")
        public void showTheSalePage(){
         Assert.assertTrue("No se muestra la pagina de ventas", campaignPage.showTheSalePage());
     }
+
+    @Then ("^the user can see the Quote Page$")
+    public void showTheQuotePage(){
+        Assert.assertTrue("No se muestra la pagina de cotizaciones", campaignPage.showTheSalePage());
+    }
+
 }
